@@ -6,7 +6,6 @@ $(window).bind("load", function() {
     $(".spn_hol").fadeOut(1000);
 });
 
-
 //MENU APPEAR AND HIDE
 $(document).ready(function() {
 
@@ -315,15 +314,15 @@ $(document).ready(function() {
 
 
 
-
-//VIDEO BACKGROUND
-$(document).ready(function() {
-  var videobackground = new $.backgroundVideo($('body'), {
-    "align": "centerXY",
-    "width": 1280,
-    "height": 720,
-    "path": "media/",
-    "filename": "cloud",
-    "types": ["mp4","ogg","webm"]
-  });
-});
+//
+// //VIDEO BACKGROUND
+// $(document).ready(function() {
+//   var videobackground = new $.backgroundVideo($('body'), {
+//     "align": "centerXY",
+//     "width": 1280,
+//     "height": 720,
+//     "path": "media/",
+//     "filename": "cloud",
+//     "types": ["mp4","ogg","webm"]
+//   });
+// });

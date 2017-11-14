@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+	Bent - Bootstrap Landing Page Template by Dcrazed
+	Site: https://dcrazed.com/bent-app-landing-page-template/
+	Free for personal and commercial use under GNU GPL 3.0 license.
+-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ibagens - Deixe seu site mais leve</title>
+    <!-- Google Font -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway:500,600,700,800,900,400,300' rel='stylesheet' type='text/css'>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900,300italic,400italic' rel='stylesheet' type='text/css'>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Owl Carousel Assets -->
+    <link href="css/owl.carousel.css" rel="stylesheet">
+    <link href="css/owl.theme.css" rel="stylesheet">
+
+
+    <!-- Pixeden Icon Font -->
+    <link rel="stylesheet" href="css/Pe-icon-7-stroke.css">
+
+    <!-- Font Awesome -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+
+    <!-- PrettyPhoto -->
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+    <!-- Style -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Responsive CSS -->
+    <link href="css/responsive.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head >
+
+<body ng-app="ibagens" ng-controller="ibagensCtrl">
+<!-- PRELOADER -->
+<div class="spn_hol">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+
+<!-- END PRELOADER -->
+
+<!-- =========================
+    START ABOUT US SECTION
+============================== -->
+<section class="header parallax home-parallax page" id="HOME">
+    <h2></h2>
+    <div class="section_overlay">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">
+                        <img src="images/a190ba94-7ea6-4766-b2cf-e29d115becac.png" alt="Logo">
+                    </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- NAV -->
+                        <!--<li><a href="http://localhost/bent">SITE</a> </li>-->
+                        <!--<li><a href="#ABOUT">SOBRE</a> </li>-->
+                        <!--<li><a href="#FEATURES">FUNÇÕES</a></li>-->
+                        <!--&lt;!&ndash;<li><a href="#SCREENS">DEMONSTRAÇÕES</a> </li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li><a href="#DOWNLOAD">DOWNLOAD </a> </li>&ndash;&gt;-->
+                        <li><a ng-click="sair()" > SAIR </a> </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+
+            <!-- /.container- -->
+        </nav>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div style="margin-top: 30px" class="logo text-center">
+                        <!-- LOGO -->
+
+                        <img width="250" src="images/a190ba94-7ea6-4766-b2cf-e29d115becac.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- END HEADER SECTION -->
+
+<!-- =========================
+     START ABOUT US SECTION
+     ============================== -->
+
+<section class="about page" id="ABOUT" >
+    <div class="container" align="center">
+        <div class="contact_form wow bounceIn">
+            <div class="container">
+                <!-- CONTACT FORM starts here, Go to contact.php and add your email ID, thats it.-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1> Bem vindo {{user.user.name}}</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2> Este é seu token:</h2>
+                        <textarea ng-model="user.user.token"  rows="5" cols="120"> </textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4> Você pode usá-lo para fazer upload de imagens e para requisitar as imagens que possui.</h4>
+                        <h4> Para aproveitar ao máximo as funções da API, vá para <a href="#FEATURES"> Documentação </a> </h4>
+
+                    </div>
+                </div>
+
+                <div ng-if="imagens.length == 0" class="row">
+                    <div class="col-md-12">
+                        <h4> Suas imagens aparecerão aqui. </h4>
+                    </div>
+                </div>
+
+                <div ng-if="imagens.length > 0" class="row">
+                    <div class="col-md-12">
+                        <h4> Esta são suas imagens: </h4>
+                        <div style="padding: 10px" ng-repeat="img in imagens | limitTo: limit" >
+                            <img class="img-text" title="http://localhost:9005/imgs/w_500,crop/{{img.img}}" src="http://localhost:9005/imgs/w_500,crop/{{img.img}}" width="200" >
+                            link: <a href="http://localhost:9005/imgs/w_500,crop/{{img.img}}" target="_blank">http://localhost:9005/imgs/w_500,crop/{{img.img}}</a>
+                        </div>
+                        <div> <a ng-if="limit < imagens.length" ng-click="vermais()" >ver mais</a></div>
+                    </div>
+                </div>
+                <!-- END FORM -->
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- End About Us -->
+
+<section id="FEATURES" class="features page">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <!-- FEATURES SECTION TITLE -->
+                <div class="section_title wow fadeIn" data-wow-duration="1s">
+                    <h2>Documentação</h2>
+                    <p> Veja algumas das funções oferecidas pela API.</p>
+                </div>
+                <!-- END FEATURES SECTION TITLE -->
+            </div>
+        </div>
+    </div>
+
+    <div class="feature_inner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 right_no_padding wow fadeInLeft" data-wow-duration="1s">
+                    <!-- FEATURE -->
+
+                    <div class="left_single_feature">
+                        <!-- ICON -->
+                        <div><span class="pe-7s-like"></span></div>
+
+                        <!-- FEATURE HEADING AND DESCRIPTION -->
+                        <h3>Redimensionamento<span>/</span></h3>
+                        <p>Altera o tamanho da imagem de forma que os pixels da imagem original sejam modificados para ficar dentro das novas limitações solicitadas, isso quebra os a os aspectos originais da imagem.</p>
+                    </div>
+
+                    <!-- END SINGLE FEATURE -->
+
+
+                    <!-- FEATURE -->
+                    <div class="left_single_feature">
+                        <!-- ICON -->
+                        <div><span class="pe-7s-science"></span></div>
+
+                        <!-- FEATURE HEADING AND DESCRIPTION -->
+                        <h3>Recorte<span>/</span></h3>
+                        <p>Realizar corte nas dimensões especificadas, a partir do centro é possível obter apenas a região correspondente às dimensões passadas.</p>
+                    </div>
+                    <!-- END SINGLE FEATURE -->
+
+
+                    <!-- FEATURE -->
+                    <div class="left_single_feature">
+                        <!-- ICON -->
+                        <div><span class="pe-7s-look"></span></div>
+
+                        <!-- FEATURE HEADING AND DESCRIPTION -->
+                        <h3>Circular<span>/</span></h3>
+                        <p>Retorna uma versão circular da imagem requisitada.</p>
+                    </div>
+                    <!-- END SINGLE FEATURE -->
+
+                </div>
+                <div class="col-md-4">
+                    <div class="feature_iphone">
+                        <!-- FEATURE PHONE IMAGE -->
+                        <img class="wow bounceIn" data-wow-duration="1s" src="images/iPhone02.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-4 left_no_padding wow fadeInRight" data-wow-duration="1s">
+
+                    <!-- FEATURE -->
+                    <div class="right_single_feature">
+                        <!-- ICON -->
+                        <div><span class="pe-7s-monitor"></span></div>
+
+                        <!-- FEATURE HEADING AND DESCRIPTION -->
+                        <h3><span>/</span>Escala de cinza</h3>
+                        <p>Aplica um filtro cinza sobre a imagem, isso é feito através do parâmetro gray na requisição. É possível combinar esse filtro com qualquer outra transformação, por exemplo, a partir de um crop.</p>
+                    </div>
+                    <!-- END SINGLE FEATURE -->
+
+
+                    <!-- FEATURE -->
+                    <div class="right_single_feature">
+                        <!-- ICON -->
+                        <div><span class="pe-7s-phone"></span></div>
+
+                        <!-- FEATURE HEADING AND DESCRIPTION -->
+                        <h3><span>/</span>Borrão</h3>
+                        <p>Retorna uma imagem contendo apenas o padrão de cores da imagem original e com a menor tamanho possivel.</p>
+                    </div>
+                    <!-- END SINGLE FEATURE -->
+
+
+                    <!-- FEATURE -->
+                    <div class="right_single_feature">
+                        <!-- ICON -->
+                        <div><span class="pe-7s-gleam"></span></div>
+
+                        <!-- FEATURE HEADING AND DESCRIPTION -->
+                        <h3><span>/</span>Foto a partir de nome informado</h3>
+                        <p>Gera uma imagem default para uso em, por exemplo, perfis de usuários que não cadastram fotos.</p>
+                    </div>
+                    <!-- END SINGLE FEATURE -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END FEATURES SECTION -->
+
+
+
+
+<!-- =========================
+     FOOTER
+============================== -->
+
+<section class="copyright">
+    <h2></h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="copy_right_text">
+                    <!-- COPYRIGHT TEXT -->
+                    <p>Ibagens &copy; 2017. Todos os direitos rezervados.</p>
+                    <p>contribua para ela no github <a href="https://github.com/mrcssoares/ibagens">Ibagens</a></p>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+                <div ng-click="sair()" style="cursor: pointer; color: #ffffff;" class="scroll_top">
+                    SAIR
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- END FOOTER -->
+
+
+<!-- =========================
+     SCRIPTS
+============================== -->
+
+<script src="js/angular/angular.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/jquery.fitvids.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/jquery.parallax-1.1.3.js"></script>
+<script src="js/jquery.prettyPhoto.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/jquery.ajaxchimp.langs.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/app.js"></script>
+
+
+
+</body>
+</html>

@@ -50,7 +50,7 @@
 	<![endif]-->
 </head>
 
-<body>
+<body ng-app="ibagens" ng-controller="ibagensCtrl" >
     <!-- PRELOADER -->
     <div class="spn_hol">
         <div class="spinner">
@@ -86,12 +86,13 @@
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             <!-- NAV -->
-                            <li><a href="#HOME">HOME</a> </li>
-                            <li><a href="#ABOUT">ABOUT </a> </li>
-                            <li><a href="#FEATURES">FEATURES</a></li>
-                            <li><a href="#SCREENS">SCREENS</a> </li>
-                            <li><a href="#DOWNLOAD">DOWNLOAD </a> </li>
-                            <li><a href="#CONTACT">CONTACT </a> </li>
+                            <li><a href="#HOME">INICIO</a> </li>
+                            <li><a href="#ABOUT">SOBRE</a> </li>
+                            <li><a href="#FEATURES">FUNÇÕES</a></li>
+                            <!--<li><a href="#SCREENS">DEMONSTRAÇÕES</a> </li>-->
+                            <!--<li><a href="#DOWNLOAD">DOWNLOAD </a> </li>-->
+                            <li><a href="#CONTACT"> CADASTRE-SE </a> </li>
+                            <li><a data-toggle="modal" data-target="#login-modal" > ENTRAR </a> </li>
                         </ul>
                     </div>
                     <!-- /.navbar-collapse -->
@@ -112,19 +113,19 @@
                     <div class="col-md-6 col-sm-6">
                         <div class="home_text">
                             <!-- TITLE AND DESC -->
-                            <h1>Uma plataforma de tratamento de imagens.</h1>
-                            <p>Esta plataforma destina-se a tratar imagens de forma pratica para uso em sites e aplicativos.</p>
-
+                            <h1>Uma plataforma de tratamento de imagens</h1>
+                            <p>
+                                Esta plataforma destina-se a tratar imagens de forma prática para uso em sites e aplicativos.
+                            </p>
                             <div class="download-btn">
-                            <!-- BUTTON -->
-                                <!--<a class="btn home-btn wow fadeInLeft" href="#DOWNLOAD">Download</a>-->
-                                <!--<a class="tuor btn wow fadeInRight" href="#ABOUT">Take a tour <i class="fa fa-angle-down"></i></a>-->
+                                <a class="btn home-btn wow fadeInLeft" href="#CONTACT">Entre ou cadastre-se</a>
+                                <a class="tuor btn wow fadeInRight" href="#ABOUT">Sobre nós <i class="fa fa-angle-down"></i></a>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4 col-md-offset-1 col-sm-4">
                         <div class="home-iphone">
-                            <video width="620" src="video/video.mp4" autoplay>
+                            <video id="video" width="550" loop src="video/video.mp4">
                         </div>
                     </div>
                 </div>
@@ -134,13 +135,9 @@
 
     <!-- END HEADER SECTION -->
 
-
-
-
- <!-- =========================
-     START ABOUT US SECTION
-============================== -->
-
+    <!-- =========================
+         START ABOUT US SECTION
+         ============================== -->
 
     <section class="about page" id="ABOUT">
         <div class="container">
@@ -148,8 +145,9 @@
                 <div class="col-md-10 col-md-offset-1">
                     <!-- ABOUT US SECTION TITLE-->
                     <div class="section_title">
-                        <h2>About Us</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                        <h2>Sobre nós</h2>
+                        <p>
+                            O Ibagens é uma ferramenta capaz de transformar diferentes tipos de imagens para formatos que atendam melhor às necessidades de um site ou aplicativo.                        </p>
                     </div>
                 </div>
 
@@ -161,24 +159,24 @@
                     <div class="col-md-6">
                         <div class="about_phone wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
                         <!-- PHONE -->
-                            <img src="images/about_iphone.png" alt="">
+                            <img src="images/ideias.png" alt="">
                         </div>
                     </div>
                     <div class="col-md-6  wow fadeInRight" data-wow-duration="1s" data-wow-delay=".5s">
                         <!-- TITLE -->
                         <div class="inner_about_title">
-                            <h2>Why we are best <br> for you</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <h2>O que podemos fazer <br> para sua aplicação</h2>
+                            <p>.</p>
                         </div>
                         <div class="inner_about_desc">
 
                             <!-- SINGLE DESC -->
                             <div class="single_about_area fadeInUp wow" data-wow-duration=".5s" data-wow-delay="1s">
                                 <!-- ICON -->
-                                <div><i class="pe-7s-timer"></i></div>
+                                <div><i class="pe-7s-upload"></i></div>
                                 <!-- HEADING DESCRIPTION -->
-                                <h3>Lorem ipsum dolor sit amet</h3>
-                                <p>Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                                <h3>UPLOAD DE IMAGENS</h3>
+                                <p>Carregue imagens de segurança ou qualquer outro arquivo, em qualquer escala de qualquer fonte. API para upload rápido diretamente dos navegadores de seus usuários ou aplicativos para dispositivos móveis.</p>
                             </div>
                             <!-- END SINGLE DESC -->
 
@@ -186,21 +184,22 @@
                             <!-- SINGLE DESC -->
                             <div class="single_about_area fadeInUp wow" data-wow-duration=".5s" data-wow-delay="1.5s">
                                 <!-- ICON -->
-                                <div><i class="pe-7s-target"></i></div>
+                                <div><i class="pe-7s-tools"></i></div>
                                 <!-- HEADING DESCRIPTION -->
-                                <h3>Lorem ipsum dolor sit amet</h3>
-                                <p>Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                                <h3>MANIPULAÇÃO DE IMAGEM</h3>
+                                <p>Manipule suas imagens dinamicamente para se adequar a qualquer design gráfico. Aplica efeitos, redimensionamento, corte, detecção de rosto, marcas d'água e toneladas de recursos de processamento de imagem.</p>
                             </div>
                             <!-- END SINGLE DESC -->
+
 
 
                             <!-- SINGLE DESC -->
                             <div class="single_about_area fadeInUp wow" data-wow-duration=".5s" data-wow-delay="2s">
                                 <!-- ICON -->
-                                <div><i class="pe-7s-stopwatch"></i></div>
+                                <div><i class="pe-7s-photo-gallery"></i></div>
                                 <!-- HEADING DESCRIPTION -->
-                                <h3>Lorem ipsum dolor sit amet</h3>
-                                <p>Cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit.</p>
+                                <h3>ARMAZENAMENTO NA NÚVEM</h3>
+                                <p>Armazene tantas imagens quanto necessário. Nosso serviço de hospedagem de imagens armazena imagens de forma privada e segura.</p>
                             </div>
                             <!-- END SINGLE DESC -->
 
@@ -210,29 +209,29 @@
             </div>
         </div>
 
-        <div class="video_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 wow fadeInLeftBig">
-                    <!-- VIDEO LEFT TITLE -->
-                        <div class="video_title">
-                            <h2>Best App <br>in the market</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
-                        </div>
-                        <div class="video-button">
-                            <!-- BUTTON -->
-                            <a class="btn btn-primary btn-video" href="#FEATURES" role="button">Features</a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 wow fadeInRightBig">
-                         <!-- VIDEO -->
-                        <div class="video">
-                            <iframe src="https://player.vimeo.com/video/88209254?title=0&amp;byline=0&amp;portrait=0&amp;color=cc0000" width="560" height="315"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!--<div class="video_area">-->
+            <!--<div class="container">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-md-6 wow fadeInLeftBig">-->
+                    <!--&lt;!&ndash; VIDEO LEFT TITLE &ndash;&gt;-->
+                        <!--<div class="video_title">-->
+                            <!--<h2>Best App <br>in the market</h2>-->
+                            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>-->
+                        <!--</div>-->
+                        <!--<div class="video-button">-->
+                            <!--&lt;!&ndash; BUTTON &ndash;&gt;-->
+                            <!--<a class="btn btn-primary btn-video" href="#FEATURES" role="button">Features</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-6 wow fadeInRightBig">-->
+                         <!--&lt;!&ndash; VIDEO &ndash;&gt;-->
+                        <!--<div class="video">-->
+                            <!--<iframe src="https://player.vimeo.com/video/88209254?title=0&amp;byline=0&amp;portrait=0&amp;color=cc0000" width="560" height="315"></iframe>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
     </section>
     <!-- End About Us -->
 
@@ -250,11 +249,11 @@
                     <div class="col-md-12 wow bounceInDown">
                         <div id="carousel-example-caption-testimonial" class="carousel slide" data-ride="carousel">
                             <!-- Indicators -->
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-caption-testimonial" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-caption-testimonial" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-caption-testimonial" data-slide-to="2"></li>
-                            </ol>
+                            <!--<ol class="carousel-indicators">-->
+                                <!--<li data-target="#carousel-example-caption-testimonial" data-slide-to="0" class="active"></li>-->
+                                <!--&lt;!&ndash;<li data-target="#carousel-example-caption-testimonial" data-slide-to="1"></li>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<li data-target="#carousel-example-caption-testimonial" data-slide-to="2"></li>&ndash;&gt;-->
+                            <!--</ol>-->
 
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
@@ -263,44 +262,12 @@
                                         <div class="row">
                                             <div class="col-md-12 text-center">
                                                 <!-- IMAGE -->
-                                                <img src="images/client_1.png" alt="">
+                                                <img width="130" src="images/marcos_n.jpg" alt="">
                                                 <div class="testimonial_caption">
                                                    <!-- DESCRIPTION -->  
-                                                    <h2>Dan Harmon</h2>
-                                                    <h4><span>SR. UI Designer,</span> Dcrazed</h4>
-                                                    <p>“Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.”</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-md-12 text-center">
-                                                 <!-- IMAGE -->
-                                                <img src="images/client_2.png" alt="">
-                                                <div class="testimonial_caption">
-                                                <!-- DESCRIPTION --> 
-                                                    <h2>Allie Kingsley</h2>
-                                                    <h4><span>SR. Content Strategist,</span> Designscrazed</h4>
-                                                    <p>“Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.”</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="container">
-                                        <div class="row">
-                                            <div class="col-md-12 text-center">
-                                                <!-- IMAGE -->
-                                                <img src="images/client_3.png" alt="">
-                                                <div class="testimonial_caption">
-                                                <!-- DESCRIPTION --> 
-                                                    <h2>Joel Mchale</h2>
-                                                    <h4><span>SR. Developer,</span> Treehouse</h4>
-                                                    <p>“Lorem ipsum dolor sit amet, consectetur adipisicing elit, do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.”</p>
+                                                    <h2>Marcos Soares</h2>
+                                                    <h4><span>Desenvolvedor Web - </span> <a onclick="window.open('http://teewa.com.br')" >Teewa</a></h4>
+                                                    <p>“Não deixe pra amanhã o que você deveria ter feito semana passada.”</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -329,8 +296,8 @@
                 <div class="col-md-10 col-md-offset-1">
                     <!-- FEATURES SECTION TITLE -->
                     <div class="section_title wow fadeIn" data-wow-duration="1s">
-                        <h2>Features</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                        <h2>Funções</h2>
+                        <p> Veja algumas das funções oferecidas pela API.</p>
                     </div>
                     <!-- END FEATURES SECTION TITLE -->
                 </div>
@@ -348,8 +315,8 @@
                             <div><span class="pe-7s-like"></span></div>
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3>Creative Design<span>/</span></h3>
-                            <p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do eiusmod tempor incididunt</p>
+                            <h3>Redimensionamento<span>/</span></h3>
+                            <p>Altera o tamanho da imagem de forma que os pixels da imagem original sejam modificados para ficar dentro das novas limitações solicitadas, isso quebra os a os aspectos originais da imagem.</p>
                         </div>
 
                         <!-- END SINGLE FEATURE -->
@@ -361,8 +328,8 @@
                             <div><span class="pe-7s-science"></span></div>
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3>Modern Look<span>/</span></h3>
-                            <p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do eiusmod tempor incididunt</p>
+                            <h3>Recorte<span>/</span></h3>
+                            <p>Realizar corte nas dimensões especificadas, a partir do centro é possível obter apenas a região correspondente às dimensões passadas.</p>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -373,8 +340,8 @@
                             <div><span class="pe-7s-look"></span></div>
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3>Minimal Layout<span>/</span></h3>
-                            <p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do eiusmod tempor incididunt</p>
+                            <h3>Circular<span>/</span></h3>
+                            <p>Retorna uma versão circular da imagem requisitada.</p>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -393,8 +360,8 @@
                             <div><span class="pe-7s-monitor"></span></div>
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><span>/</span>Retina ready</h3>
-                            <p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do eiusmod tempor incididunt</p>
+                            <h3><span>/</span>Escala de cinza</h3>
+                            <p>Aplica um filtro cinza sobre a imagem, isso é feito através do parâmetro gray na requisição. É possível combinar esse filtro com qualquer outra transformação, por exemplo, a partir de um crop.</p>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -405,8 +372,8 @@
                             <div><span class="pe-7s-phone"></span></div>
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><span>/</span>Responsive Ready</h3>
-                            <p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do eiusmod tempor incididunt</p>
+                            <h3><span>/</span>Borrão</h3>
+                            <p>Retorna uma imagem contendo apenas o padrão de cores da imagem original e com a menor tamanho possivel.</p>
                         </div>
                         <!-- END SINGLE FEATURE -->
 
@@ -417,8 +384,8 @@
                             <div><span class="pe-7s-gleam"></span></div>
 
                             <!-- FEATURE HEADING AND DESCRIPTION -->
-                            <h3><span>/</span>Clean Code</h3>
-                            <p>Lorem ipsum dolor, consectetur sed do adipisicing elit, sed do eiusmod tempor incididunt</p>
+                            <h3><span>/</span>Foto a partir de nome informado</h3>
+                            <p>Gera uma imagem default para uso em, por exemplo, perfis de usuários que não cadastram fotos.</p>
                         </div>
                         <!-- END SINGLE FEATURE -->
                     </div>
@@ -430,73 +397,73 @@
 
 
 
-<!-- =========================
-     START CALL TO ACTION
-============================== -->
-    <div class="call_to_action">
-        <div class="container">
-            <div class="row wow fadeInLeftBig" data-wow-duration="1s">
-                <div class="col-md-9">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et olore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                </div>
-                <div class="col-md-3">
-                    <a class="btn btn-primary btn-action" href="#" role="button">Download Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--&lt;!&ndash; =========================-->
+     <!--START CALL TO ACTION-->
+<!--============================== &ndash;&gt;-->
+    <!--<div class="call_to_action">-->
+        <!--<div class="container">-->
+            <!--<div class="row wow fadeInLeftBig" data-wow-duration="1s">-->
+                <!--<div class="col-md-9">-->
+                    <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et olore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>-->
+                <!--</div>-->
+                <!--<div class="col-md-3">-->
+                    <!--<a class="btn btn-primary btn-action" href="#" role="button">Download Now</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 
-    <!-- END CALL TO ACTION -->
-
-
-<!-- =========================
-     Start APPS SCREEN SECTION
-============================== -->
-    <section class="apps_screen page" id="SCREENS">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-md-offset-1 wow fadeInBig" data-wow-duration="1s">
-                        <!-- APPS SCREEN TITLE -->
-                        <div class="section_title">
-                            <h2>Screenshots</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>                           
-                        </div>
-                        <!-- END APPS SCREEN TITLE -->
-                    </div>
-                </div>
-            </div>
-
-        <div class="screen_slider">
-            <div id="demo" class="wow bounceInRight" data-wow-duration="1s">
-                <div id="owl-demo" class="owl-carousel">
-
-                    <!-- APPS SCREEN IMAGES -->
-                    <div class="item">
-                    <a href="images/screens/iPhone04.png" rel="prettyPhoto[pp_gal]"><img src="images/iPhone04.png" width="60" height="60" alt="APPS SCREEN" /></a>
-                    </div>
-                    <div class="item">
-                        <a href="images/screens/iPhone05.png" rel="prettyPhoto[pp_gal]"><img src="images/iPhone05.png" width="60" height="60" alt="APPS SCREEN" /></a>
-                    </div>
-                    <div class="item">
-                        <a href="images/screens/iPhone06.png" rel="prettyPhoto[pp_gal]"><img src="images/iPhone06.png" width="60" height="60" alt="APPS SCREEN" /></a>
-                    </div>
-                    <div class="item">
-                        <a href="images/screens/iPhone07.png" rel="prettyPhoto[pp_gal]"><img src="images/iPhone07.png" width="60" height="60" alt="APPS SCREEN" /></a>
-                    </div>
-                    <div class="item">
-                        <a href="images/screens/iPhone08.png" rel="prettyPhoto[pp_gal]"><img src="images/iPhone08.png" width="60" height="60" alt="APPS SCREEN" /></a>
-                    </div>
-                    <div class="item">
-                        <a href="images/screens/iPhone09.png" rel="prettyPhoto[pp_gal]"><img src="images/iPhone09.png" width="60" height="60" alt="APPS SCREEN" /></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!--&lt;!&ndash; END CALL TO ACTION &ndash;&gt;-->
 
 
+<!--&lt;!&ndash; =========================-->
+     <!--Start APPS SCREEN SECTION-->
+<!--============================== &ndash;&gt;-->
+    <!--<section class="apps_screen page" id="SCREENS">-->
+            <!--<div class="container">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-md-10 col-md-offset-1 wow fadeInBig" data-wow-duration="1s">-->
+                        <!--&lt;!&ndash; APPS SCREEN TITLE &ndash;&gt;-->
+                        <!--<div class="section_title">-->
+                            <!--<h2>Screenshots</h2>-->
+                            <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>                           -->
+                        <!--</div>-->
+                        <!--&lt;!&ndash; END APPS SCREEN TITLE &ndash;&gt;-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
 
-    <!-- ENS APPS SCREEN -->
+        <!--<div class="screen_slider">-->
+            <!--<div id="demo" class="wow bounceInRight" data-wow-duration="1s">-->
+                <!--<div id="owl-demo" class="owl-carousel">-->
+
+                    <!--&lt;!&ndash; APPS SCREEN IMAGES &ndash;&gt;-->
+                    <!--<div class="item">-->
+                    <!--<a href="images/iphone04.png" rel="prettyPhoto[pp_gal]"><img src="images/iphone04.png" width="60" height="60" alt="APPS SCREEN" /></a>-->
+                    <!--</div>-->
+                    <!--<div class="item">-->
+                        <!--<a href="images/iphone05.png" rel="prettyPhoto[pp_gal]"><img src="images/iphone05.png" width="60" height="60" alt="APPS SCREEN" /></a>-->
+                    <!--</div>-->
+                    <!--<div class="item">-->
+                        <!--<a href="images/iphone06.png" rel="prettyPhoto[pp_gal]"><img src="images/iphone06.png" width="60" height="60" alt="APPS SCREEN" /></a>-->
+                    <!--</div>-->
+                    <!--<div class="item">-->
+                        <!--<a href="images/iphone07.png" rel="prettyPhoto[pp_gal]"><img src="images/iphone07.png" width="60" height="60" alt="APPS SCREEN" /></a>-->
+                    <!--</div>-->
+                    <!--<div class="item">-->
+                        <!--<a href="images/iphone08.png" rel="prettyPhoto[pp_gal]"><img src="images/iphone08.png" width="60" height="60" alt="APPS SCREEN" /></a>-->
+                    <!--</div>-->
+                    <!--<div class="item">-->
+                        <!--<a href="images/iphone09.png" rel="prettyPhoto[pp_gal]"><img src="images/iphone09.png" width="60" height="60" alt="APPS SCREEN" /></a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</section>-->
+
+
+
+    <!--&lt;!&ndash; ENS APPS SCREEN &ndash;&gt;-->
 
 
 
@@ -511,120 +478,120 @@
         <div class="section_overlay">
             <div class="container wow bounceInLeft" data-wow-duration="1s">
                 <div class="row text-center">
-                    <div class="col-md-3">
-                        <div class="single_fun_facts">
-                            <i class="pe-7s-cloud-download"></i>
-                            <h2><span  class="counter_num">699</span> <span>+</span></h2>
-                            <p>Downloads</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="single_fun_facts">
-                            <i class="pe-7s-look"></i>
-                            <h2><span  class="counter_num">1999</span> <span>+</span></h2>
-                            <p>Likes</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="single_fun_facts">
-                            <i class="pe-7s-comment"></i>
-                            <h2><span  class="counter_num">199</span> <span>+</span></h2>
-                            <p>Feedbacks</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="single_fun_facts">
-                            <i class="pe-7s-cup"></i>
-                            <h2><span  class="counter_num">10</span> <span>+</span></h2>
-                            <p>Awards</p>
-                        </div>
-                    </div>
+                    <!--<div class="col-md-3">-->
+                        <!--<div class="single_fun_facts">-->
+                            <!--<i class="pe-7s-cloud-download"></i>-->
+                            <!--<h2><span  class="counter_num">699</span> <span>+</span></h2>-->
+                            <!--<p>Downloads</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-3">-->
+                        <!--<div class="single_fun_facts">-->
+                            <!--<i class="pe-7s-look"></i>-->
+                            <!--<h2><span  class="counter_num">1999</span> <span>+</span></h2>-->
+                            <!--<p>Likes</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-3">-->
+                        <!--<div class="single_fun_facts">-->
+                            <!--<i class="pe-7s-comment"></i>-->
+                            <!--<h2><span  class="counter_num">199</span> <span>+</span></h2>-->
+                            <!--<p>Feedbacks</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="col-md-3">-->
+                        <!--<div class="single_fun_facts">-->
+                            <!--<i class="pe-7s-cup"></i>-->
+                            <!--<h2><span  class="counter_num">10</span> <span>+</span></h2>-->
+                            <!--<p>Awards</p>-->
+                        <!--</div>-->
+                    <!--</div>-->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- END FUN FACTS -->
+    <!--&lt;!&ndash; END FUN FACTS &ndash;&gt;-->
 
 
 
 
-<!-- =========================
-     START DOWNLOAD NOW 
-============================== -->
-    <section class="download page" id="DOWNLOAD">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    <!-- DOWNLOAD NOW SECTION TITLE -->
-                    <div class="section_title">
-                        <h2>download now</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-                    </div>
-                    <!--END DOWNLOAD NOW SECTION TITLE -->
-                </div>
-            </div>
-        </div>
+<!--&lt;!&ndash; =========================-->
+     <!--START DOWNLOAD NOW -->
+<!--============================== &ndash;&gt;-->
+    <!--<section class="download page" id="DOWNLOAD">-->
+        <!--<div class="container">-->
+            <!--<div class="row">-->
+                <!--<div class="col-md-10 col-md-offset-1">-->
+                    <!--&lt;!&ndash; DOWNLOAD NOW SECTION TITLE &ndash;&gt;-->
+                    <!--<div class="section_title">-->
+                        <!--<h2>download now</h2>-->
+                        <!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash;END DOWNLOAD NOW SECTION TITLE &ndash;&gt;-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="download_screen text-center wow fadeInUp" data-wow-duration="1s">
-                        <img src="images/download_screen.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!--<div class="container">-->
+            <!--<div class="row">-->
+                <!--<div class="col-md-8 col-md-offset-2">-->
+                    <!--<div class="download_screen text-center wow fadeInUp" data-wow-duration="1s">-->
+                        <!--<img src="images/download_screen.png" alt="">-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <div class="available_store">
-            <div class="container  wow bounceInRight" data-wow-duration="1s">
-                <div class="col-md-6">
-                    <div class="available_title">
-                        <h2>Available on</h2>
-                        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                    </div>
-                </div>
+        <!--<div class="available_store">-->
+            <!--<div class="container  wow bounceInRight" data-wow-duration="1s">-->
+                <!--<div class="col-md-6">-->
+                    <!--<div class="available_title">-->
+                        <!--<h2>Available on</h2>-->
+                        <!--<p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>-->
+                    <!--</div>-->
+                <!--</div>-->
 
-                <!-- DOWNLOADABLE STORE -->
-                <div class="col-md-6">
-                    <div class="row">
-                        <a href="">
-                            <div class="col-md-4 no_padding">
-                                <div class="single_store">
-                                    <i class="fa fa-apple"></i>
-                                    <div class="store_inner">
-                                        <h2>iOS</h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <div class="col-md-4 no_padding">
-                            <a href="">
-                                <div class="single_store">
-                                    <i class="fa fa-android"></i>
-                                    <div class="store_inner">
-                                        <h2>ANDROID</h2>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-md-4 no_padding">
-                            <a href="">
-                                <div class="single_store last">
-                                    <i class="fa fa-windows"></i>
-                                    <div class="store_inner">
-                                        <h2>WINDOWS</h2>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!-- END DOWNLOADABLE STORE -->
-            </div>
-        </div>
-    </section>
-    <!-- END DOWNLOAD -->
+                <!--&lt;!&ndash; DOWNLOADABLE STORE &ndash;&gt;-->
+                <!--<div class="col-md-6">-->
+                    <!--<div class="row">-->
+                        <!--<a href="">-->
+                            <!--<div class="col-md-4 no_padding">-->
+                                <!--<div class="single_store">-->
+                                    <!--<i class="fa fa-apple"></i>-->
+                                    <!--<div class="store_inner">-->
+                                        <!--<h2>iOS</h2>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</a>-->
+                        <!--<div class="col-md-4 no_padding">-->
+                            <!--<a href="">-->
+                                <!--<div class="single_store">-->
+                                    <!--<i class="fa fa-android"></i>-->
+                                    <!--<div class="store_inner">-->
+                                        <!--<h2>ANDROID</h2>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                        <!--<div class="col-md-4 no_padding">-->
+                            <!--<a href="">-->
+                                <!--<div class="single_store last">-->
+                                    <!--<i class="fa fa-windows"></i>-->
+                                    <!--<div class="store_inner">-->
+                                        <!--<h2>WINDOWS</h2>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</a>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash; END DOWNLOADABLE STORE &ndash;&gt;-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</section>-->
+    <!--&lt;!&ndash; END DOWNLOAD &ndash;&gt;-->
 
 <!-- =========================
      START CONTCT FORM AREA
@@ -635,69 +602,68 @@
                 <div class="col-md-10 col-md-offset-1 wow bounceIn">
                     <!-- Start Contact Section Title-->
                     <div class="section_title">
-                        <h2>Get in touch</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                        <h2>Cadastre-se</h2>
+                        <p>Comece agora mesmo a utilziar a plataforma, a versão atual é uma versão de testes, por isso se encontra disponível de forma gratuita.</p>
                     </div>
                 </div>
             </div>
 
             <div class="contact_form wow bounceIn">
                 <div class="container">
-
-                <!-- START ERROR AND SUCCESS MESSAGE -->
-                    <div class="form_error text-center">
-                        <div class="name_error hide error">Please Enter your name</div>
-                        <div class="email_error hide error">Please Enter your Email</div>
-                        <div class="email_val_error hide error">Please Enter a Valid Email Address</div>
-                        <div class="message_error hide error">Please Enter Your Message</div>
-                    </div>
-                    <div class="Sucess"></div>
-                <!-- END ERROR AND SUCCESS MESSAGE -->
-
-                <!-- CONTACT FORM starts here, Go to contact.php and add your email ID, thats it.-->    
-                    <form role="form" action="contact.php">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <input type="text" class="form-control" id="name" placeholder="Name">
-                                <input type="email" class="form-control" id="email" placeholder="Email">
-                                <input type="text" class="form-control" id="subject" placeholder="Subject">
-                            </div>
-
-
-                            <div class="col-md-8">
-                                <textarea class="form-control" id="message" rows="25" cols="10" placeholder="  Message Texts..."></textarea>
-                                <button type="button" class="btn btn-default submit-btn form_submit">SEND MESSAGE</button>
-                            </div>
+                <!-- CONTACT FORM starts here, Go to contact.php and add your email ID, thats it.-->
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" ng-model="nome" placeholder="Nome">
+                            <input type="email" class="form-control" ng-model="email" placeholder="E-mail">
+                            <input type="password" class="form-control" ng-model="senha" placeholder="Senha">
                         </div>
-                    </form>
-                    <!-- END FORM --> 
+
+                        <div class="col-md-4" align="center">
+                            <button type="button" ng-click="cadastro(nome, email, senha)" class="btn btn-default submit-btn form_submit">Cadastrar-se</button>
+                            <br> OU <br>
+                            <button data-toggle="modal" data-target="#login-modal" id="login"; class="btn btn-default submit-btn">Entrar</button>
+                        </div>
+                    </div>
+                <!-- END FORM -->
                 </div>
             </div>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 wow bounceInLeft">
-                        <div class="social_icons">
-                            <ul>
-                                <li><a href=""><i class="fa fa-facebook"></i></a>
-                                </li>
-                                <li><a href=""><i class="fa fa-twitter"></i></a>
-                                </li>
-                                <li><a href=""><i class="fa fa-dribbble"></i></a>
-                                </li>
-                                <li><a href=""><i class="fa fa-behance"></i></a>
-                                </li>
-                                <li><a href=""><i class="fa fa-youtube-play"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+            <!--<div class="container">-->
+                <!--<div class="row">-->
+                    <!--<div class="col-md-12 wow bounceInLeft">-->
+                        <!--<div class="social_icons">-->
+                            <!--<ul>-->
+                                <!--<li><a href=""><i class="fa fa-facebook"></i></a>-->
+                                <!--</li>-->
+                                <!--<li><a href=""><i class="fa fa-twitter"></i></a>-->
+                                <!--</li>-->
+                                <!--<li><a href=""><i class="fa fa-dribbble"></i></a>-->
+                                <!--</li>-->
+                                <!--<li><a href=""><i class="fa fa-behance"></i></a>-->
+                                <!--</li>-->
+                                <!--<li><a href=""><i class="fa fa-youtube-play"></i></a>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
     </section>
     <!-- END CONTACT -->
-
+    <div class="modal fade" id="login-modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="loginmodal-container">
+                <h1>Entrar</h1><br>
+                <form>
+                    <input class="form-control" type="text" ng-model="email2" name="user" placeholder="Username">
+                    <input class="form-control" type="password" ng-model="senha2" name="pass" placeholder="Password">
+                </form>
+                <button ng-click="entrar(email2, senha2)" class="btn btn-default submit-btn" value="Login">Login<button>
+            </div>
+        </div>
+    </div>
 <!-- =========================
      Start Subscription Form 
 ============================== -->
@@ -712,36 +678,36 @@
 
                         <!-- Start Subscribe Section Title -->
                         <div class="section_title">
-                            <h2>SUBSCRIBE US</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                            <h2>Justificativa</h2>
+                            <p>Esta plataforma foi desenvolvida para aplicar a integração dos conhecimentos obtidos no curso de Sitemas de Informação, na Universidade Federal do Amazomas, afim de ser apresentado em uma monográfia.</p>
                         </div>
                         <!-- End Subscribe Section Title -->
                     </div>
                 </div>
             </div>
 
-            <div class="container">
-                <div class="row  wow lightSpeedIn">
-                    <div class="col-md-6 col-md-offset-3">
-                        <!-- SUBSCRIPTION SUCCESSFUL OR ERROR MESSAGES -->
-                        <div class="subscription-success"></div>
-                        <div class="subscription-error"></div>
-                        <!-- Check this topic on how to add email subscription list, http://kb.mailchimp.com/lists/signup-forms/host-your-own-signup-forms -->
-                        <form id="mc-form" action="https://designscrazed.us8.list-manage.com/subscribe/post" method="POST" class="subscribe_form">                         
-                        <input type="hidden" name="u" value="6908378c60c82103f3d7e8f1c">
-                        <input type="hidden" name="id" value="8c5074025d">
-                            <div class="form-group">
-                                <!-- EMAIL INPUT BOX -->
-                                <input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" class="required email form-control" id="mce-EMAIL" placeholder="Enter Email Address" value="" >                                 
-                            </div>
-                                <!-- SUBSCRIBE BUTTON -->
-                            <button type="submit" class="btn btn-default subs-btn">Submit</button>
-                        </form>
+            <!--<div class="container">-->
+                <!--<div class="row  wow lightSpeedIn">-->
+                    <!--<div class="col-md-6 col-md-offset-3">-->
+                        <!--&lt;!&ndash; SUBSCRIPTION SUCCESSFUL OR ERROR MESSAGES &ndash;&gt;-->
+                        <!--<div class="subscription-success"></div>-->
+                        <!--<div class="subscription-error"></div>-->
+                        <!--&lt;!&ndash; Check this topic on how to add email subscription list, http://kb.mailchimp.com/lists/signup-forms/host-your-own-signup-forms &ndash;&gt;-->
+                        <!--<form id="mc-form" action="https://designscrazed.us8.list-manage.com/subscribe/post" method="POST" class="subscribe_form">                         -->
+                        <!--<input type="hidden" name="u" value="6908378c60c82103f3d7e8f1c">-->
+                        <!--<input type="hidden" name="id" value="8c5074025d">-->
+                            <!--<div class="form-group">-->
+                                <!--&lt;!&ndash; EMAIL INPUT BOX &ndash;&gt;-->
+                                <!--<input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" class="required email form-control" id="mce-EMAIL" placeholder="Enter Email Address" value="" >                                 -->
+                            <!--</div>-->
+                                <!--&lt;!&ndash; SUBSCRIBE BUTTON &ndash;&gt;-->
+                            <!--<button type="submit" class="btn btn-default subs-btn">Submit</button>-->
+                        <!--</form>-->
 
 
-                    </div>
-                </div>
-            </div>
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
     </section>
 
@@ -759,8 +725,8 @@
                 <div class="col-md-6">
                     <div class="copy_right_text">
                     <!-- COPYRIGHT TEXT -->
-                        <p>Copyright &copy; 2017. All Rights Reserved.</p>        
-                        <p>A theme by <a href="https://dcrazed.com/">Dcrazed</a></p>
+                        <p>Ibagens &copy; 2017. Todos os direitos rezervados.</p>
+                        <p>contribua para ela no github <a href="https://github.com/mrcssoares/ibagens">Ibagens</a></p>
                     </div>
                      
                 </div>
@@ -781,6 +747,7 @@
 ============================== -->
 
 
+    <script src="js/angular/angular.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/owl.carousel.js"></script>
@@ -794,7 +761,10 @@
     <script src="js/waypoints.min.js"></script>
     <script src="js/jquery.counterup.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="js/app.js"></script>
 
 
 </body>
+
+
 </html>
