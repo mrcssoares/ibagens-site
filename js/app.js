@@ -1,7 +1,8 @@
 angular.module("ibagens", []);
 
 angular.module("ibagens").value('config', {
-    serverUrl: "http://localhost:9005"
+    // serverUrl: "http://localhost:9005",
+    serverUrl: "https://tcc-marcos-erickribeiro.c9users.io"
 });
 
 angular.module("ibagens").controller("ibagensCtrl", function($scope, $window, $http, config) {
